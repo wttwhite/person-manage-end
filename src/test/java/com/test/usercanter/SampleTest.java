@@ -12,11 +12,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 import javax.annotation.Resource;
 import java.util.List;
 
-@RunWith(SpringRunner.class)
 @SpringBootTest
-public class UserCanterApplicationTests {
+@RunWith(SpringRunner.class)
+public class SampleTest {
 
-//        @Autowired  // 按照类型去注入
+    //    @Autowired  // 按照类型去注入
     @Resource // 按照java bin的名称注入
     private UserMapper userMapper;
 
