@@ -3,6 +3,7 @@ import java.util.Date;
 
 import com.test.usercanter.model.domain.User;
 import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -28,5 +29,19 @@ class UserServiceTest {
         boolean result = userService.save(user);
         System.out.println(user.getId());
         assertTrue(result);
+    }
+
+    @Test
+    void userRegister() {
+        String userAccount = "";
+        String userPassword = "12345678";
+        String checkPassword = "12345678";
+        long result = userService.userRegister(userAccount, userPassword, checkPassword);
+        Assertions.assertEquals(-1, result);
+        System.out.println("账户不能为空");
+        userAccount = "xinzeng";
+        result = userService.userRegister(userAccount, userPassword, checkPassword);
+        assertTrue(result >= 0);
+        System.out.println("成功");
     }
 }
