@@ -55,6 +55,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
         userQueryWrapper.eq("userAccount", userAccount);
         long count = userMapper.selectCount(userQueryWrapper);
+        System.out.println("count:"+ count);
         if (count > 0) {
             return -1;
         }
@@ -66,6 +67,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         user.setUserAccount(userAccount);
         user.setUserPassword(encryptPassword);
         boolean result = this.save(user);
+        System.out.println("result:"+ result);
         return !result ? -1 : user.getId();
     }
 }

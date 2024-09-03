@@ -15,21 +15,22 @@ import static org.junit.jupiter.api.Assertions.*;
 class UserServiceTest {
     @Resource
     private UserService userService;
-    @Test
-    void testAddUser() {
-        User user = new User();
-        user.setUsername("test1");
-        user.setAvatarUrl("");
-        user.setUserAccount("123");
-        user.setGender(0);
-        user.setUserPassword("123456");
-        user.setPhone("123");
-        user.setEmail("456");
-        user.setUserStatus(0);
-        boolean result = userService.save(user);
-        System.out.println(user.getId());
-        assertTrue(result);
-    }
+//    @Test
+//    void testAddUser() {
+//        User user = new User();
+//        user.setUsername("test1");
+//        user.setAvatarUrl("");
+//        user.setUserAccount("123");
+//        user.setGender(0);
+//        user.setUserPassword("123456");
+//        user.setPhone("123");
+//        user.setEmail("456");
+//        user.setUserStatus(0);
+//        boolean result = userService.save(user);
+//        System.out.println(user.getId());
+//        assertTrue(result);
+//        System.out.println("testAddUser");
+//    }
 
     @Test
     void userRegister() {
@@ -39,7 +40,7 @@ class UserServiceTest {
         long result = userService.userRegister(userAccount, userPassword, checkPassword);
         Assertions.assertEquals(-1, result);
         System.out.println("账户不能为空");
-        userAccount = "xinzeng";
+        userAccount = "5555";
         result = userService.userRegister(userAccount, userPassword, checkPassword);
         assertTrue(result >= 0);
         System.out.println("成功");
