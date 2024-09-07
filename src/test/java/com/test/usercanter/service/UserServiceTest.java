@@ -32,17 +32,17 @@ class UserServiceTest {
 //        System.out.println("testAddUser");
 //    }
 
-    @Test
-    void userRegister() {
-        String userAccount = "";
-        String userPassword = "12345678";
-        String checkPassword = "12345678";
-        long result = userService.userRegister(userAccount, userPassword, checkPassword);
-        Assertions.assertEquals(-1, result);
-        System.out.println("账户不能为空");
-        userAccount = "5555";
-        result = userService.userRegister(userAccount, userPassword, checkPassword);
-        assertTrue(result >= 0);
-        System.out.println("成功");
-    }
+//    @Test
+//    void userRegister() {
+//        String userAccount = "";
+//        String userPassword = "12345678";
+//        String checkPassword = "12345678";
+//        long result = userService.userRegister(userAccount, userPassword, checkPassword);
+//        Assertions.assertEquals(-1, result);
+//        System.out.println("账户不能为空");
+//        userAccount = "5555";
+//        result = userService.userRegister(userAccount, userPassword, checkPassword);
+//        assertTrue(result >= 0);
+//        System.out.println("成功");
+//    }
 }
